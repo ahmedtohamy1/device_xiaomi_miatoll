@@ -13,25 +13,21 @@
 # limitations under the License.
 
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
-$(call inherit-product, vendor/aosp/common.mk)
+$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
 
-# Bootanimation Resolution
-TARGET_BOOT_ANIMATION_RES := 1080
-
-PRODUCT_NAME := aosp_miatoll
+PRODUCT_NAME := evolution_miatoll
 PRODUCT_DEVICE := miatoll
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := SM6250
 PRODUCT_MANUFACTURER := Xiaomi
 
+# What
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-TARGET_SUPPORTS_GOOGLE_RECORDER := true
-
-# Set this flag in build script
-ifeq ($(CURRENT_BUILD_TYPE), gapps)
-# Use Gapps
-TARGET_SHIPS_SEPERATE_GAPPS_BUILD := true
-WITH_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
-IS_PHONE := true
-endif
+TARGET_BOOT_ANIMATION_RES := 1080
+EVO_BUILD_TYPE := OFFICIAL
+TARGET_SUPPORTS_QUICK_TAP := true
+EVO_SUPPORT_URL := https://t.me/EvolutionXMiatoll
+TARGET_FACE_UNLOCK_SUPPORTED := true
+BUILD_HOSTNAME := Evolution-X
+TARGET_USES_FULL_GAPPS := false
